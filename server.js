@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
-app.get("/", (req, res) => res.send("Hiya"));
+app.get("/", (req, res) => res.send("Hey there you two!"));
 app.use('/static', express.static('static'));
 
 // Start the web server on the specified port
