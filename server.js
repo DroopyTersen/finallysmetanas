@@ -10,7 +10,7 @@ app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
 app.get("/", (req, res) => res.send("Hey there you two!"));
-app.use('/static', express.static('static'));
+app.use('/dist', express.static('dist'));
 
 // Start the web server on the specified port
 app.listen(config.port, process.env.IP, function() {
