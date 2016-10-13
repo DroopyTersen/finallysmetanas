@@ -1,1 +1,5 @@
-//require('es6-promise').polyfill();
+var onload = require("../src/scripts/onload");
+var utils = {
+    dom: require("../src/scripts/domUtils")
+}
+onload();

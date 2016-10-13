@@ -8,7 +8,7 @@
     "build:js": "webpack -p",
     "build:css": "node-sass src/styles/site.scss -o dist && cleancss -o dist/site.min.css dist/site.css",
     "watch:js": "webpack --watch",
-    "watch:css": "node-sass --watch src/styles/site.scss",
+    "watch:css": "node-sass --watch src/styles/site.scss -o dist",
     "clean": "rimraf dist"
   },
   "repository": {
