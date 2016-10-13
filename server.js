@@ -1,16 +1,23 @@
 var bodyParser = require("body-parser");
 var express = require("express");
-
-var config = { port: process.env.PORT || 3000 };
+var hbs = require("hbs");
+var config = { port: process.env.PORT || 3005 };
 var app = express();
 
+
+hbs.registerPartials(__dirname + '/src/views/partials');
 // we need the body parser so we can get at the POST body that Amazon sends
 app.use(bodyParser.json());
-app.set('view engine', 'html');
-app.engine('html', require('hbs').__express);
+app.set('env', "development");
+app.set('view cache', false);
+app.set('views', './src/views');
+app.set('view engine', 'hbs');
 
-app.get("/", (req, res) => res.send("Hey there you two!"));
 app.use('/dist', express.static('dist'));
+
+app.get("/favicon.ico", (req, res) => res.sendStatus(200));
+app.get("/", (req, res) => res.render("home"));
+app.get("/:view", (req, res) => res.render(req.params.view));
 
 // Start the web server on the specified port
 app.listen(config.port, process.env.IP, function() {
