@@ -51,7 +51,7 @@ nav.nav-bar {
                 letter-spacing: 2.5px;
 
                 // ICONS
-                i {
+                i.fa {
                     display:none;
                 }
             }
@@ -91,7 +91,7 @@ nav.nav-bar {
         #menu-trigger {
             display:inline-block;
         }
-        ul {
+        ul { 
             z-index: 2;
             position: fixed;
             max-width: 400px;
@@ -120,15 +120,16 @@ nav.nav-bar {
                     border-right: 5px solid #000;
                     > a {
                         color: #000;
-                        i {
+                        i.fa {
                             color: #d36565;
                         }
                     }
                 }
                 > a {
-                    padding: 21px 20px 19px 0;
+                    padding: 18px 20px 16px 0;
                     border-bottom: 1px solid #c3c3c3;
-                    i {
+                    font-size:.8em;
+                    i.fa {
                         display: inline-block;
                         font-size: 1.1em;
                         margin-right: 5px;

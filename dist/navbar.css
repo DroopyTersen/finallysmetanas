@@ -41,7 +41,7 @@ nav.nav-bar {
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2.5px; }
-        nav.nav-bar ul > li > a i {
+        nav.nav-bar ul > li > a i.fa {
           display: none; }
 
 @media screen and (max-width: 1300px) {
@@ -91,12 +91,13 @@ nav.nav-bar {
           border-right: 5px solid #000; }
           nav.nav-bar ul > li.selected > a {
             color: #000; }
-            nav.nav-bar ul > li.selected > a i {
+            nav.nav-bar ul > li.selected > a i.fa {
               color: #d36565; }
         nav.nav-bar ul > li > a {
-          padding: 21px 20px 19px 0;
-          border-bottom: 1px solid #c3c3c3; }
-          nav.nav-bar ul > li > a i {
+          padding: 18px 20px 16px 0;
+          border-bottom: 1px solid #c3c3c3;
+          font-size: .8em; }
+          nav.nav-bar ul > li > a i.fa {
             display: inline-block;
             font-size: 1.1em;
             margin-right: 5px;
