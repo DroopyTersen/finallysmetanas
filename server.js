@@ -10,11 +10,11 @@ hbs.registerPartials(__dirname + '/src/views/partials');
 app.use(bodyParser.json());
 app.set('env', "development");
 app.set('view cache', false);
-app.set('views', './src/views');
+app.set('views', __dirname + '/src/views');
 app.set('view engine', 'hbs');
 
-app.use('/dist', express.static('dist'));
-app.use('/images', express.static('images'));
+app.use('/dist', express.static(__dirname + '/dist'));
+app.use('/images', express.static(__dirname + '/images'));
 
 app.get("/favicon.ico", (req, res) => res.sendStatus(200));
 app.get("/", (req, res) => res.render("home"));
