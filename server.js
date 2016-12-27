@@ -1,6 +1,7 @@
 var bodyParser = require("body-parser");
 var express = require("express");
 var hbs = require("hbs");
+var favicon = require('serve-favicon');
 var config = { port: process.env.PORT || 3005 };
 var app = express();
 
@@ -8,6 +9,7 @@ var app = express();
 hbs.registerPartials(__dirname + '/src/views/partials');
 // we need the body parser so we can get at the POST body that Amazon sends
 app.use(bodyParser.json());
+app.use(favicon(__dirname + '/images/favicon.ico'));
 app.set('env', "development");
 app.set('view cache', false);
 app.set('views', __dirname + '/src/views');
