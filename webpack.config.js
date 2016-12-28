@@ -2,7 +2,7 @@ var fs = require("fs");
 var path = require("path");
 
 module.exports = {
-    entry: { "site": "./entries/site.js" },
+    entry: { "site": "./src/site.js" },
     output: {
         path: __dirname + "/dist",
         filename: "[name].js",

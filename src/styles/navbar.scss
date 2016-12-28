@@ -38,7 +38,7 @@ nav.nav-bar {
             height:100%;
             position:relative;
             border-top: 4px solid #fff;
-            &.selected {
+            &.active {
                 border-color: #333
             }
             // MENU LINK
@@ -65,7 +65,7 @@ nav.nav-bar {
         ul {
             > li {
                 opacity:.9;
-                &.selected {
+                &.active {
                     border-color:#fff;
                     > a {
                         color: #000;
@@ -115,7 +115,7 @@ nav.nav-bar {
                 padding-right:20px;
                 border-top:none;
                 height:auto;
-                &.selected {
+                &.active { 
                     border-color:#fff;
                     border-right: 5px solid #000;
                     > a {

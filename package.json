@@ -24,9 +24,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "droopy-events": "^0.0.0",
-    "es6-promise": "^4.0.5",
     "express": "^4.14.0",
-    "hbs": "^4.0.1",
     "serve-favicon": "^2.3.2"
   },
   "devDependencies": {
