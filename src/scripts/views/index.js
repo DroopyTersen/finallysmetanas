@@ -1,6 +1,6 @@
 var utils = require("../utils");
 var views = [
-    require("./home"),
+    // require("./home"),
     require("./couple"),
     require("./weddingparty")
 ];

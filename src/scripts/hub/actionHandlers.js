@@ -11,7 +11,7 @@ module.exports = function(hub) {
         },
         "navigate": function(path = "/") {
             hub.state.activeView = views.findByPath(path);
-            hub.state.activeView.init();
+            hub.state.activeView.init(hub.state);
             hub.state.menu.activePath = hub.state.activeView.path;
             leftMenu.setActive();
 

@@ -7,7 +7,7 @@ exports.create = function() {
     leftMenu.init(hub.state.menu);
     setupActionHandlers(hub);
    
-    hub.state.activeView.init();
+    hub.state.activeView.init(hub.state);
     return hub;
 };
 

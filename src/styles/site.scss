@@ -4,9 +4,59 @@ html {
 }
 body {
     min-height: 100%;
+    font-family: "ProximaNova-Regular", sans-serif;
+    text-align: center;
 }
 
 .main-content {
-    text-align: center;
+    max-width: 800px;
+    margin:0 auto;
+    p {
+        font-family: "Playfair Display", serif;
+        color: #444;
+        font-size:1.3em;
+        padding:0 10px;
+        text-align: justify;
+        line-height: 1.6em;
+        
+    }
+    hr {
+        width:130px;
+        margin-top: 25px;
+    }
+    .view-title {
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.75em;
+            letter-spacing: 9px;
+            margin-top: 10px;
+            // font-weight: 400;
+        }
+    }
+    img { 
+        max-width: 100%;
+    }
+    p.tagline {
+        font-size: 1.5em;
+        color: #000;
+        text-align: center;
+        
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .main-content {
+        margin: 70px auto;
+
+        p {
+            font-size:1.1em;
+            padding:0 20px;
+            
+        }
+        p.tagline {
+            font-size: 1.2em;
+        }
+    }
 }
 @import 'navbar'

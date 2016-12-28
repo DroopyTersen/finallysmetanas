@@ -44,18 +44,14 @@ nav.nav-bar {
         nav.nav-bar ul > li > a i.fa {
           display: none; }
 
-@media screen and (max-width: 1300px) {
-  nav.nav-bar ul > li {
-    opacity: .9; }
-    nav.nav-bar ul > li.active {
-      border-color: #fff; }
-      nav.nav-bar ul > li.active > a {
-        color: #000; } }
-
 @media screen and (max-width: 850px) {
   nav.nav-bar {
     height: 50px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.41); }
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.41);
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 2; }
     nav.nav-bar #mobile-title {
       display: inline-block;
       margin-top: 18px;
