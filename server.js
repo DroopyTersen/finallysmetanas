@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(favicon(__dirname + '/images/favicon.ico'));
 
 // Setup static folders
-app.use('/dist', express.static(__dirname + '/dist'));
-app.use('/images', express.static(__dirname + '/images'));
+app.use('/dist', express.static(__dirname + '/dist', { maxAge: '1h' }));
+app.use('/images', express.static(__dirname + '/images', { maxAge: '2d' }));
 
 app.get("/", (req, res) => res.sendFile(__dirname + "/src/index.html"));
 app.get("/:view", (req, res) => res.sendFile(__dirname + "/src/index.html"));
