@@ -10,7 +10,7 @@ module.exports = function(hub) {
             leftMenu.toggle();
         },
         "navigate": function(path = "/") {
-            if (Number.isInteger(path)) {
+            if (typeof path === "number") {
                 hub.state.activeView = path > 0 ? views.getNextView(hub.state.activeView) : views.getPrevView(hub.state.activeView);
             } else {
                 hub.state.activeView = views.findByPath(path);

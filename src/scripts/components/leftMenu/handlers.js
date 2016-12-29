@@ -25,7 +25,7 @@ module.exports = function(leftMenu) {
                 if (swipe.direction === "right" && swipe.start.x < 30) {
                     actions.toggleMenu(true);
                     //e.preventDefault();
-                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right")) {
+                } else if (swipe.distance > 100 && (swipe.direction === "left" || swipe.direction === "right")) {
                     var dir = swipe.direction === "left" ? 1 : -1;
                     actions.navigate(dir)
                 }
