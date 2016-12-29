@@ -2,7 +2,12 @@ var utils = require("../utils");
 var views = [
     // require("./home"),
     require("./couple"),
-    require("./weddingparty")
+    require("./weddingparty"),
+    require("./schedule"),
+    require("./rsvp"),
+    require("./registry"),
+    require("./place"),
+    require("./travel")
 ];
 
 views.getLinks = () => {

@@ -44,6 +44,7 @@
       .person-grid ul li.person:hover {
         opacity: 1; }
       .person-grid ul li.person img {
+        min-height: 100px;
         width: 100%; }
       .person-grid ul li.person .caption {
         position: absolute;

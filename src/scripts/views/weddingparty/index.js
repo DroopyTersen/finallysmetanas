@@ -21,8 +21,4 @@ view.render = function() {
     createPersonGrid("#groomsmen", { title: "Groomsmen", people: view.state.groomsmen});
 }
 
-view.destroy = function() {
-    
-}
-
 module.exports = view;

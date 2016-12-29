@@ -2,18 +2,18 @@ var dom = require("../../utils/domUtils");
 var template = require("./template");
 
 var view = {
-    title: "The Couple",
-    icon: "heart",
-    path: "/"
+    title: "Place",
+    icon: "map-marker",
+    path: "/place"
 };
 
 view.init = function(state) {
-    view.state = state.thecouple;
+    // view.state = state.schedule;
     view.render();
 }
 
 view.render = function() {
-    var html = template.render(view.state);
+    var html = template.render();
     dom.findOne(".main-content").innerHTML = html;
 
 }

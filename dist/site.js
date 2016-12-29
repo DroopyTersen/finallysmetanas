@@ -512,7 +512,7 @@
 	var utils = __webpack_require__(13);
 	var views = [
 	// require("./home"),
-	__webpack_require__(15), __webpack_require__(16)];
+	__webpack_require__(15), __webpack_require__(16), __webpack_require__(29), __webpack_require__(33), __webpack_require__(26), __webpack_require__(31), __webpack_require__(35)];
 	
 	views.getLinks = function () {
 	    return views.map(function (v) {
@@ -585,8 +585,6 @@
 	    dom.findOne(".main-content").innerHTML = html;
 	};
 	
-	view.destroy = function () {};
-	
 	module.exports = view;
 
 /***/ },
@@ -617,8 +615,6 @@
 	    createPersonGrid("#bridesmaids", { title: "Bridesmaids", people: view.state.bridesmaids });
 	    createPersonGrid("#groomsmen", { title: "Groomsmen", people: view.state.groomsmen });
 	};
-	
-	view.destroy = function () {};
 	
 	module.exports = view;
 
@@ -654,7 +650,8 @@
 	module.exports = {
 	    thecouple: __webpack_require__(19),
 	    bridesmaids: __webpack_require__(23),
-	    groomsmen: __webpack_require__(24)
+	    groomsmen: __webpack_require__(24),
+	    registry: __webpack_require__(28)
 	};
 
 /***/ },
@@ -665,7 +662,7 @@
 	
 	module.exports = {
 	    imageUrl: "/images/couple.jpg",
-	    content: "\n<p class='tagline'>Hi, we\u2019re Jake and Angela. We\u2019re pretty fond of one another.</p>\n<hr />\n<p><i>Our story is kind of long, so here\u2019s a condensed version for you\u2026</i></p>\n\n<p>We met in CP U.S. Government class at Horlick High School \n(shoutout to Mr. Blaga for putting us together on his seating chart!), \nbecoming the dynamic duo you all know and love in 2005.</p>\n\n<p>Since then we\u2019ve survived enjoyed many adventures... \nfive years of college (that good \u201CSuper Senior\u201D status), many road trips, \nover 112 hours watching Star Wars, a 4,000 mile trip to London to see a statue, \ntwo kickball cookouts, a VIP One Direction concert experience, \nand becoming fur parents to our precious Duke.</p>\n\n<p>Now, we\u2019re are going to embark on our greatest adventure yet.</p>\n\n<p>While taking Duke for a walk along Lake Michigan, Jake asked to stop \nto try to catch a Pokemon. Oblivious, Angela obliged and decided to take \na photo of the harbor for her Snap Story.</p> \n\n<p>After capturing the perfect shot, \nshe turned to find Jake fumbling around in his pocket. \"What the f*ck are you doing?\", \nshe asked.</p> \n\n<p>Finally, he pulled out what he\u2019d been searching for\u2026 a thimble. \nDropping to one knee with Duke at his side, Jake asked Angela to marry him and Duke.</p>\n\n<p>Yep. That\u2019s right, after 12 <s>looooooooooong</s> beautiful, unforgettable years... \nwe will finally be The Smetanas.</p>\n"
+	    content: "\n<p class='tagline'>Hi, we\u2019re Jake and Angela. We\u2019re pretty fond of one another.</p>\n<hr />\n<p><i>Our story is kind of long, so here\u2019s a condensed version for you\u2026</i></p>\n\n<p>We met in CP U.S. Government class at Horlick High School \n(shoutout to Mr. Blaga for putting us together on his seating chart!), \nbecoming the dynamic duo you all know and love in 2005.</p>\n\n<p>Since then we\u2019ve survived enjoyed many adventures... \nfive years of college (that good \u201CSuper Senior\u201D status), many road trips, \nover 112 hours watching Star Wars, a 4,000 mile trip to London to see a statue, \ntwo kickball cookouts, a VIP One Direction concert experience, \nand becoming fur parents to our precious Duke.</p>\n\n<p>Now, we\u2019re are going to embark on our greatest adventure yet.</p>\n\n<p>While taking Duke for a walk along Lake Michigan, Jake asked to stop \nto try to catch a Pokemon. Oblivious, Angela obliged and decided to take \na photo of the harbor for her Snap Story.</p> \n\n<p>After capturing the perfect shot, \nshe turned to find Jake fumbling around in his pocket. \"What the f*ck are you doing?\", \nshe asked.</p> \n\n<p>Finally, he pulled out what he\u2019d been searching for\u2026 a thimble. \nDropping to one knee with Duke at his side, Jake asked Angela to marry him and Duke.</p>\n\n<p>Yep. That\u2019s right, after 12 <s>looooooooooong</s> beautiful, unforgettable years... \nwe will finally be <i>The Smetanas.</i></p>\n"
 	};
 
 /***/ },
@@ -866,6 +863,221 @@
 	
 	exports.render = function (model) {
 	    return "\n        <div id='wedding-party'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>Wedding Party</h2>\n            </div>\n            <div id='bridesmaids'></div>\n            <div id='groomsmen'></div>\n        </div>\n    ";
+	};
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var dom = __webpack_require__(3);
+	var template = __webpack_require__(27);
+	
+	var view = {
+	    title: "Registry",
+	    icon: "gift",
+	    path: "/registry"
+	};
+	
+	view.init = function (state) {
+	    view.state = state.registry;
+	    view.render();
+	};
+	
+	view.render = function () {
+	    var html = template.render(view.state);
+	    dom.findOne(".main-content").innerHTML = html;
+	};
+	
+	module.exports = view;
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.render = function (model) {
+	    return "\n        <div class='registry'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>Registry</h2>\n            </div>\n            <div class='content'>\n                " + model.content + "\n            </div>\n            <div class='links'>\n                " + model.links.map(renderLink).join(" / ") + "\n            </div>\n        </div>\n    ";
+	};
+	
+	var renderLink = function renderLink(link) {
+	    return "<a href='" + link.url + "'>" + link.title + "</a>";
+	};
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	module.exports = {
+	    links: [{
+	        title: "Amazon",
+	        url: "https://www.amazon.com/"
+	    }, {
+	        title: "Zola",
+	        url: "https://www.zola.com/wedding-registry"
+	    }, {
+	        title: "Target",
+	        url: "http://www.target.com/"
+	    }, {
+	        title: "West Elm",
+	        url: "http://www.westelm.com/"
+	    }, {
+	        title: "Bed Bath & Beyond",
+	        url: "https://www.bedbathandbeyond.com/"
+	    }],
+	    content: "\n    <p>We appreciate you coming \u2013 from near and far \u2013 to be with us \n    over this holiday weekend. Your attendance is as good a gift as any. \n    Who really needs a KitchenAid, anyway? (Though, in the event you find it necessary, they are available on Amazon).</p>\n\n    <p>To add a little copper to our otherwise non-existent Moscow mule collection, \n    you can browse our \"wants\" over here at Zola. Or, if you feel inclined, take a minute or \n    two to peruse Target, West Elm, or Bed Bath & Beyond.</p>"
+	};
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var dom = __webpack_require__(3);
+	var template = __webpack_require__(30);
+	
+	var view = {
+	    title: "Schedule",
+	    icon: "clock-o",
+	    path: "/schedule"
+	};
+	
+	view.init = function (state) {
+	    // view.state = state.schedule;
+	    view.render();
+	};
+	
+	view.render = function () {
+	    var html = template.render();
+	    dom.findOne(".main-content").innerHTML = html;
+	};
+	
+	module.exports = view;
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.render = function (model) {
+	    return "\n        <div class='schedule'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>Schedule</h2>\n            </div>\n            <div class='content'>\n                <p>Coming soon...</p>\n            </div>\n        </div>\n    ";
+	};
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var dom = __webpack_require__(3);
+	var template = __webpack_require__(32);
+	
+	var view = {
+	    title: "Place",
+	    icon: "map-marker",
+	    path: "/place"
+	};
+	
+	view.init = function (state) {
+	    // view.state = state.schedule;
+	    view.render();
+	};
+	
+	view.render = function () {
+	    var html = template.render();
+	    dom.findOne(".main-content").innerHTML = html;
+	};
+	
+	module.exports = view;
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.render = function (model) {
+	    return "\n        <div class='place'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>Place</h2>\n            </div>\n            <div class='content'>\n                <p>Coming soon...</p>\n            </div>\n        </div>\n    ";
+	};
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var dom = __webpack_require__(3);
+	var template = __webpack_require__(34);
+	
+	var view = {
+	    title: "rsvp",
+	    icon: "thumbs-o-up",
+	    path: "/rsvp"
+	};
+	
+	view.init = function (state) {
+	    // view.state = state.schedule;
+	    view.render();
+	};
+	
+	view.render = function () {
+	    var html = template.render();
+	    dom.findOne(".main-content").innerHTML = html;
+	};
+	
+	module.exports = view;
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.render = function (model) {
+	    return "\n        <div class='rsvp'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>RSVP</h2>\n            </div>\n            <div class='content'>\n                <p>Coming soon...</p>\n            </div>\n        </div>\n    ";
+	};
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var dom = __webpack_require__(3);
+	var template = __webpack_require__(36);
+	
+	var view = {
+	    title: "Travel",
+	    icon: "plane",
+	    path: "/travel"
+	};
+	
+	view.init = function (state) {
+	    // view.state = state.schedule;
+	    view.render();
+	};
+	
+	view.render = function () {
+	    var html = template.render();
+	    dom.findOne(".main-content").innerHTML = html;
+	};
+	
+	module.exports = view;
+
+/***/ },
+/* 36 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.render = function (model) {
+	    return "\n        <div class='travel'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>Travel</h2>\n            </div>\n            <div class='content'>\n                <p>Coming soon...</p>\n            </div>\n        </div>\n    ";
 	};
 
 /***/ }

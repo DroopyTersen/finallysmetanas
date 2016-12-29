@@ -29,6 +29,6 @@ she asked.</p>
 Dropping to one knee with Duke at his side, Jake asked Angela to marry him and Duke.</p>
 
 <p>Yep. That’s right, after 12 <s>looooooooooong</s> beautiful, unforgettable years... 
-we will finally be The Smetanas.</p>
+we will finally be <i>The Smetanas.</i></p>
 `
 }
