@@ -460,12 +460,15 @@
 	        },
 	        bodySwiping: function bodySwiping(e, swipe) {
 	            if (swipe.start.x > 30 && swipe.distance > 40 && (swipe.direction === "left" || swipe.direction === "right")) {
-	                var left = swipe.direction === "left" ? swipe.distance * -1 : swipe.distance;
-	                mainContent.style.left = left + "px";
-	                if (swipe.distance > 125) {
-	                    dom.addClass(htmlEl, "sliding");
-	                } else {
-	                    dom.removeClass(htmlEl, "sliding");
+	                // skip swiping stuff if it is a menu swipe
+	                if (!isMenuSwipe(e)) {
+	                    var left = swipe.direction === "left" ? swipe.distance * -1 : swipe.distance;
+	                    mainContent.style.left = left + "px";
+	                    if (swipe.distance > 125) {
+	                        dom.addClass(htmlEl, "sliding");
+	                    } else {
+	                        dom.removeClass(htmlEl, "sliding");
+	                    }
 	                }
 	            } else {
 	                mainContent.style.left = "inherit";
@@ -476,7 +479,7 @@
 	            if (!e.cancelBubble) {
 	                if (swipe.direction === "right" && swipe.start.x < 30) {
 	                    actions.toggleMenu(true);
-	                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right")) {
+	                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right") && !isMenuSwipe(e)) {
 	                    dom.addClass(mainContent, "hide");
 	                    setTimeout(function () {
 	                        mainContent.style.left = "inherit";
@@ -500,6 +503,12 @@
 	            }
 	        }
 	    };
+	};
+	
+	var isMenuSwipe = function isMenuSwipe(e) {
+	    return [].concat.apply([], e.path.map(function (el) {
+	        return el.className;
+	    })).join(",").indexOf("nav-bar") > -1;
 	};
 
 /***/ },

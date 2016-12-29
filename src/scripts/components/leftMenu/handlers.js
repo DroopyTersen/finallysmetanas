@@ -25,12 +25,16 @@ module.exports = function(leftMenu) {
         },
         bodySwiping(e, swipe) {
             if (swipe.start.x > 30 && swipe.distance > 40 && (swipe.direction === "left" || swipe.direction === "right")) {
-                var left = swipe.direction === "left" ? swipe.distance * -1 : swipe.distance;
-                mainContent.style.left = left + "px";
-                if (swipe.distance > 125) {
-                    dom.addClass(htmlEl, "sliding");
-                } else {
-                    dom.removeClass(htmlEl, "sliding");
+                // skip swiping stuff if it is a menu swipe
+                if (!isMenuSwipe(e)) {
+                    var left = swipe.direction === "left" ? swipe.distance * -1 : swipe.distance;
+                    mainContent.style.left = left + "px";
+                    if (swipe.distance > 125) {
+                        dom.addClass(htmlEl, "sliding");
+                    } else {
+                        dom.removeClass(htmlEl, "sliding");
+                    }
+
                 }
             } else {
                 mainContent.style.left = "inherit";
@@ -41,7 +45,7 @@ module.exports = function(leftMenu) {
             if (!e.cancelBubble) {
                 if (swipe.direction === "right" && swipe.start.x < 30) {
                     actions.toggleMenu(true);
-                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right")) {
+                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right") && !isMenuSwipe(e) ) {
                     dom.addClass(mainContent, "hide");
                     setTimeout(() => {
                         mainContent.style.left = "inherit";
@@ -65,4 +69,9 @@ module.exports = function(leftMenu) {
             }
         }
     };
+}
+
+
+var isMenuSwipe = (e) => {
+    return ([].concat.apply([], e.path.map(el => el.className)).join(",").indexOf("nav-bar") > -1);
 }
