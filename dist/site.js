@@ -774,11 +774,11 @@
 	"use strict";
 	
 	var renderPerson = function renderPerson(person) {
-	    return "\n        <li class='person' data-name='" + person.name + "'>\n            <img src='/images/people/" + person.name + "-md.jpg'>\n            <div class='caption'>\n                <div class='name'>" + person.name + "</div>\n                <div class='title'>" + person.title + "</div>\n            </div>\n        </li>\n        ";
+	    return "\n        <li class='person' data-name='" + person.name + "'>\n            <img src='/images/people/" + person.name.toLowerCase() + "-md.jpg'>\n            <div class='caption'>\n                <div class='name'>" + person.name + "</div>\n                <div class='title'>" + person.title + "</div>\n            </div>\n        </li>\n        ";
 	};
 	
 	exports.renderDetails = function (person) {
-	    return "\n        <img src='/images/people/" + person.name + ".jpg'>\n        <h3 class='name'>" + person.name + "</h3>\n        <div class='knownfor'>Known for " + person.yearsKnown + " years</div>\n        <div class='bio'>\n            " + person.bio + "\n        </div>\n    ";
+	    return "\n        <img src='/images/people/" + person.name.toLowerCase() + ".jpg'>\n        <h3 class='name'>" + person.name + "</h3>\n        <div class='knownfor'>Known for " + person.yearsKnown + " years</div>\n        <div class='bio'>\n            " + person.bio + "\n        </div>\n    ";
 	};
 	exports.render = function (model) {
 	    return "\n        <div class='person-grid'>\n            <h3 class='grid-title'>" + model.title + "</h3>\n            <ul>\n                " + model.people.map(renderPerson).join("") + "\n            </ul>\n\n            <div class='person-details'>\n                <div class='content'></div>\n                <span class='close-btn'><i class=\"fa fa-2x fa-times\"></i></span>\n            <div>\n        </div>\n    ";

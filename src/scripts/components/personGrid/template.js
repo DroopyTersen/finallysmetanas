@@ -1,7 +1,7 @@
 var renderPerson = function(person) {
     return `
         <li class='person' data-name='${person.name}'>
-            <img src='/images/people/${person.name}-md.jpg'>
+            <img src='/images/people/${person.name.toLowerCase()}-md.jpg'>
             <div class='caption'>
                 <div class='name'>${person.name}</div>
                 <div class='title'>${person.title}</div>
@@ -12,7 +12,7 @@ var renderPerson = function(person) {
 
 exports.renderDetails = function(person) {
     return `
-        <img src='/images/people/${person.name}.jpg'>
+        <img src='/images/people/${person.name.toLowerCase()}.jpg'>
         <h3 class='name'>${person.name}</h3>
         <div class='knownfor'>Known for ${person.yearsKnown} years</div>
         <div class='bio'>
