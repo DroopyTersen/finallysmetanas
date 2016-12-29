@@ -12,10 +12,14 @@ nav.nav-bar {
         display:none;
         font-size: 1.7em;
         position: absolute;
-        // z-index: 3;
+        cursor:pointer;
         top: 0;
         left: 0;
         padding: 9px 15px;
+        opacity:.9;
+        &:hover {
+            opacity: 1;
+        }
     }
     #mobile-title {
         display:none;

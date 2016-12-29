@@ -1,12 +1,12 @@
 exports.render = function(model) {
     return `
-        <div id='the-couple'>
+        <div class='the-couple'>
             <div class='view-title'>
                 <hr/>
                 <h2 class='view-title'>The Couple</h2>
             </div>
             <div class='image-container'>
-                <img src='${model.imageUrl}'>
+                <img style='filter: sepia(50%); webkit-filter: sepia(50%);' src='${model.imageUrl}'>
             </div>
             <div class='content'>
                 ${model.content}
