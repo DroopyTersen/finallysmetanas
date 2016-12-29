@@ -16,5 +16,5 @@ exports.render = function(model) {
 }
 
 var renderLink = function(link) {
-    return `<a href='${link.url}'>${link.title}</a>`
+    return `<a target='_blank' href='${link.url}'>${link.title}</a>`
 }

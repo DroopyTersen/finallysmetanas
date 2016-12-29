@@ -424,6 +424,7 @@
 	
 	    // Open and close the menu with a swipe
 	    leftMenu.menuSwiper.on("swipe-left", leftMenu.handlers.menuSwipeLeft);
+	    leftMenu.bodySwiper.on("swiping", leftMenu.handlers.bodySwiping);
 	    leftMenu.bodySwiper.on("swipe", leftMenu.handlers.bodySwipe);
 	};
 
@@ -434,7 +435,10 @@
 	"use strict";
 	
 	var actions = __webpack_require__(6);
+	var dom = __webpack_require__(3);
 	
+	var mainContent = document.querySelector(".main-content");
+	var htmlEl = document.querySelector("html");
 	module.exports = function (leftMenu) {
 	    leftMenu.handlers = {
 	        triggerClick: function triggerClick(e) {
@@ -454,16 +458,39 @@
 	            e.cancelBubble = true;
 	            e.stopPropagation();
 	        },
+	        bodySwiping: function bodySwiping(e, swipe) {
+	            if (swipe.start.x > 30 && swipe.distance > 40 && (swipe.direction === "left" || swipe.direction === "right")) {
+	                var left = swipe.direction === "left" ? swipe.distance * -1 : swipe.distance;
+	                mainContent.style.left = left + "px";
+	                if (swipe.distance > 125) {
+	                    dom.addClass(htmlEl, "sliding");
+	                } else {
+	                    dom.removeClass(htmlEl, "sliding");
+	                }
+	            } else {
+	                mainContent.style.left = "inherit";
+	            }
+	        },
 	        bodySwipe: function bodySwipe(e, swipe) {
+	
 	            if (!e.cancelBubble) {
 	                if (swipe.direction === "right" && swipe.start.x < 30) {
 	                    actions.toggleMenu(true);
-	                    //e.preventDefault();
-	                } else if (swipe.distance > 100 && (swipe.direction === "left" || swipe.direction === "right")) {
+	                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right")) {
+	                    dom.addClass(mainContent, "hide");
+	                    setTimeout(function () {
+	                        mainContent.style.left = "inherit";
+	                        dom.removeClass(mainContent, "hide");
+	                    }, 100);
 	                    var dir = swipe.direction === "left" ? 1 : -1;
 	                    actions.navigate(dir);
+	                } else {
+	                    mainContent.style.left = "inherit";
 	                }
+	            } else {
+	                mainContent.style.left = "inherit";
 	            }
+	            dom.removeClass(htmlEl, "sliding");
 	        },
 	        linkClick: function linkClick(e) {
 	            if (e.currentTarget && e.currentTarget.href) {
@@ -940,7 +967,7 @@
 	};
 	
 	var renderLink = function renderLink(link) {
-	    return "<a href='" + link.url + "'>" + link.title + "</a>";
+	    return "<a target='_blank' href='" + link.url + "'>" + link.title + "</a>";
 	};
 
 /***/ },
