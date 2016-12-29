@@ -423,7 +423,7 @@
 	
 	    // Open and close the menu with a swipe
 	    leftMenu.menuSwiper.on("swipe-left", leftMenu.handlers.menuSwipeLeft);
-	    leftMenu.bodySwiper.on("swipe-right", leftMenu.handlers.bodySwipeRight);
+	    leftMenu.bodySwiper.on("swipe", leftMenu.handlers.bodySwipe);
 	};
 
 /***/ },
@@ -449,12 +449,19 @@
 	        },
 	        menuSwipeLeft: function menuSwipeLeft(e, swipe) {
 	            actions.toggleMenu(false);
-	            e.preventDefault();
+	            //e.preventDefault();
+	            e.cancelBubble = true;
+	            e.stopPropagation();
 	        },
-	        bodySwipeRight: function bodySwipeRight(e, swipe) {
-	            if (swipe.start.x < 30) {
-	                actions.toggleMenu(true);
-	                e.preventDefault();
+	        bodySwipe: function bodySwipe(e, swipe) {
+	            if (!e.cancelBubble) {
+	                if (swipe.direction === "right" && swipe.start.x < 30) {
+	                    actions.toggleMenu(true);
+	                    //e.preventDefault();
+	                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right")) {
+	                    var dir = swipe.direction === "left" ? 1 : -1;
+	                    actions.navigate(dir);
+	                }
 	            }
 	        },
 	        linkClick: function linkClick(e) {
@@ -487,7 +494,11 @@
 	        "navigate": function navigate() {
 	            var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "/";
 	
-	            hub.state.activeView = views.findByPath(path);
+	            if (Number.isInteger(path)) {
+	                hub.state.activeView = path > 0 ? views.getNextView(hub.state.activeView) : views.getPrevView(hub.state.activeView);
+	            } else {
+	                hub.state.activeView = views.findByPath(path);
+	            }
 	            hub.state.activeView.init(hub.state);
 	            window.scroll(0, 0);
 	            hub.state.menu.activePath = hub.state.activeView.path;
@@ -530,6 +541,31 @@
 	    return matches.length ? matches[0] : null;
 	};
 	
+	views.getNextView = function (view) {
+	    var index = views.findViewIndex(view);
+	    if (index > -1) {
+	        var nextIndex = index + 1;
+	        if (nextIndex >= views.length) nextIndex = 0;
+	        return views[nextIndex];
+	    }
+	    return null;
+	};
+	
+	views.getPrevView = function (view) {
+	    var index = views.findViewIndex(view);
+	    if (index > -1) {
+	        var prevIndex = index - 1;
+	        if (prevIndex < 0) prevIndex = views.length - 1;
+	        return views[prevIndex];
+	    }
+	    return null;
+	};
+	views.findViewIndex = function (view) {
+	    for (var i = 0; i < views.length; i++) {
+	        if (views[i].path === view.path) return i;
+	    }
+	    return -1;
+	};
 	module.exports = views;
 
 /***/ },

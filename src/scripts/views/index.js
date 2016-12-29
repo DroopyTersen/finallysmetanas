@@ -22,4 +22,29 @@ views.findByPath = (path) => {
     return matches.length ? matches[0] : null;
 };
 
+views.getNextView = (view) => {
+    var index = views.findViewIndex(view);
+    if (index > -1) {
+        var nextIndex = index + 1;
+        if (nextIndex >= views.length) nextIndex = 0;
+        return views[nextIndex]
+    } 
+    return null;
+};
+
+views.getPrevView = (view) => {
+    var index = views.findViewIndex(view);
+    if (index > -1) {
+        var prevIndex = index - 1;
+        if (prevIndex < 0) prevIndex = views.length - 1;
+        return views[prevIndex];
+    } 
+    return null;
+};
+views.findViewIndex = (view) => {
+    for(var i = 0; i < views.length; i++) {
+        if (views[i].path === view.path) return i;
+    }
+    return -1;
+};
 module.exports = views;

@@ -10,7 +10,11 @@ module.exports = function(hub) {
             leftMenu.toggle();
         },
         "navigate": function(path = "/") {
-            hub.state.activeView = views.findByPath(path);
+            if (Number.isInteger(path)) {
+                hub.state.activeView = path > 0 ? views.getNextView(hub.state.activeView) : views.getPrevView(hub.state.activeView);
+            } else {
+                hub.state.activeView = views.findByPath(path);
+            }
             hub.state.activeView.init(hub.state);
             window.scroll(0,0);
             hub.state.menu.activePath = hub.state.activeView.path;
