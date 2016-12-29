@@ -449,9 +449,13 @@
 	        },
 	        menuSwipeLeft: function menuSwipeLeft(e, swipe) {
 	            actions.toggleMenu(false);
+	            e.preventDefault();
 	        },
 	        bodySwipeRight: function bodySwipeRight(e, swipe) {
-	            if (swipe.start.x < 30) actions.toggleMenu(true);
+	            if (swipe.start.x < 30) {
+	                actions.toggleMenu(true);
+	                e.preventDefault();
+	            }
 	        },
 	        linkClick: function linkClick(e) {
 	            if (e.currentTarget && e.currentTarget.href) {
@@ -592,6 +596,8 @@
 	"use strict";
 	
 	var dom = __webpack_require__(3);
+	var template = __webpack_require__(25);
+	var createPersonGrid = __webpack_require__(21).create;
 	
 	var view = {
 	    title: "Wedding Party",
@@ -599,13 +605,17 @@
 	    path: "/weddingparty"
 	};
 	
-	view.init = function () {
+	view.init = function (state) {
+	    view.state = state;
 	    view.render();
 	};
 	
 	view.render = function () {
-	    var html = "hi, im the wedding party page";
+	    var html = template.render();
 	    dom.findOne(".main-content").innerHTML = html;
+	
+	    createPersonGrid("#bridesmaids", { title: "Bridesmaids", people: view.state.bridesmaids });
+	    createPersonGrid("#groomsmen", { title: "Groomsmen", people: view.state.groomsmen });
 	};
 	
 	view.destroy = function () {};
@@ -620,7 +630,7 @@
 	
 	var views = __webpack_require__(12);
 	var activeView = views.findByPath(location.pathname);
-	var data = __webpack_require__(18);
+	
 	var state = {
 	    activeView: activeView,
 	    menu: {
@@ -628,10 +638,11 @@
 	        isOpen: false,
 	        activePath: activeView.path,
 	        links: views.getLinks()
-	    },
-	    thecouple: data.thecouple
+	    }
 	};
 	
+	// add in hardcoded data
+	state = Object.assign({}, __webpack_require__(18), state);
 	module.exports = state;
 
 /***/ },
@@ -641,7 +652,9 @@
 	"use strict";
 	
 	module.exports = {
-	    thecouple: __webpack_require__(19)
+	    thecouple: __webpack_require__(19),
+	    bridesmaids: __webpack_require__(23),
+	    groomsmen: __webpack_require__(24)
 	};
 
 /***/ },
@@ -663,6 +676,196 @@
 	
 	exports.render = function (model) {
 	    return "\n        <div id='the-couple'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>The Couple</h2>\n            </div>\n            <div class='image-container'>\n                <img src='" + model.imageUrl + "'>\n            </div>\n            <div class='content'>\n                " + model.content + "\n            </div>\n        </div>\n    ";
+	};
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var template = __webpack_require__(22);
+	var dom = __webpack_require__(3);
+	
+	exports.create = function (selector, state) {
+	    var selectors = {
+	        closeBtn: selector + " .person-details .close-btn",
+	        modal: selector + " .person-details",
+	        modalContent: selector + " .person-details .content",
+	        person: selector + " li.person"
+	    };
+	    var component = {
+	        state: state,
+	        container: dom.findOne(selector)
+	    };
+	
+	    var onPersonClick = function onPersonClick(e) {
+	        e.preventDefault();
+	        e.stopPropagation();
+	        showPersonDetails(e.currentTarget.getAttribute("data-name"));
+	    };
+	
+	    var showPersonDetails = function showPersonDetails(name) {
+	        var matches = component.state.people.filter(function (p) {
+	            return p.name === name;
+	        });
+	        if (matches.length) {
+	            dom.findOne(selectors.modalContent).innerHTML = template.renderDetails(matches[0]);
+	            dom.addClass(dom.findOne(selectors.modal), "active");
+	        };
+	    };
+	
+	    var closePersonDetails = function closePersonDetails() {
+	        dom.removeClass(dom.findOne(selectors.modal), "active");
+	    };
+	
+	    var bindEvents = function bindEvents() {
+	        dom.find(selectors.person).forEach(function (li) {
+	            //li.addEventListener("click", onPersonClick);
+	        });
+	        dom.findOne(selectors.closeBtn).addEventListener("click", closePersonDetails);
+	    };
+	
+	    var render = function render() {
+	        var html = template.render(component.state);
+	        component.container.innerHTML = html;
+	    };
+	
+	    render();
+	    bindEvents();
+	};
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var renderPerson = function renderPerson(person) {
+	    return "\n        <li class='person' data-name='" + person.name + "'>\n            <img src='" + person.imageUrl + "'>\n            <div class='caption'>\n                <div class='name'>" + person.name + "</div>\n                <div class='title'>" + person.title + "</div>\n            </div>\n        </li>\n        ";
+	};
+	
+	exports.renderDetails = function (person) {
+	    return "\n        <img src='" + person.imageUrl + "'>\n        <h3 class='name'>" + person.name + "</h3>\n        <div class='knownfor'>Known for " + person.yearsKnown + " years</div>\n        <div class='bio'>\n            " + person.bio + "\n        </div>\n    ";
+	};
+	exports.render = function (model) {
+	    return "\n        <div class='person-grid'>\n            <h3 class='grid-title'>" + model.title + "</h3>\n            <ul>\n                " + model.people.map(renderPerson).join("") + "\n            </ul>\n\n            <div class='person-details'>\n                <div class='content'></div>\n                <span class='close-btn'><i class=\"fa fa-2x fa-times\"></i></span>\n            <div>\n        </div>\n    ";
+	};
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	module.exports = [{
+	    name: "Ani",
+	    title: "Maid of Honor",
+	    yearsKnown: "16",
+	    imageUrl: "/images/people/ani.jpg",
+	    bio: "<p>Ani and Ang have more memories together than they can remember\u2026  \n        (\"Teen drinking is very bad.\" J-Kwon)</p>"
+	}, {
+	    name: "Kimberly",
+	    title: "Maid of Honor",
+	    imageUrl: "/images/people/kimberly.jpg",
+	    yearsKnown: "24",
+	    bio: "<p>Ang would like to quote an ever-so-wise Mary-Kate Olsen at age 5, \"I am the cute one. She's just my sister.\"</p>"
+	}, {
+	    name: "Jordan",
+	    title: "Bridesmaid",
+	    imageUrl: "/images/people/jordan.jpg",
+	    yearsKnown: "12",
+	    bio: "<p>Jordan's Bio is coming soon...</p>"
+	}, {
+	    name: "Kristin",
+	    title: "Bridesmaid",
+	    imageUrl: "http://placehold.it/200x200",
+	    yearsKnown: "12",
+	    bio: "<p>Kristin was the first person to find out Ang and Jake had become an official couple back in 2005. Even before Angela.</p>"
+	}, {
+	    name: "Julie",
+	    title: "Bridesmaid",
+	    imageUrl: "/images/people/julie.jpg",
+	    yearsKnown: "12",
+	    bio: "<p>One time Julie and Ang threw Justin Bieber an 18th birthday party. The little jerk didn\u2019t show\u2026</p>"
+	}, {
+	    name: "Breah",
+	    title: "Bridesmaid",
+	    imageUrl: "/images/people/breah.jpg",
+	    yearsKnown: "3",
+	    bio: "<p>Breah is the official legal representation for the wedding party should things get too out-of-hand at the hen night/stag parties.</p>"
+	}, {
+	    name: "Lily",
+	    title: "Flower Girl",
+	    imageUrl: "http://placehold.it/200x200",
+	    yearsKnown: "3",
+	    bio: "<p>Lily's bio is coming soon...</p>"
+	}];
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	module.exports = [{
+	    name: "Jared",
+	    title: "Best Man",
+	    yearsKnown: "27",
+	    imageUrl: "/images/people/jared.jpg",
+	    bio: "<p>Jared's Bio is coming soon...</p>"
+	}, {
+	    name: "Drew",
+	    title: "Best Man",
+	    imageUrl: "/images/people/drew.jpg",
+	    yearsKnown: "23",
+	    bio: "<p>One time Drew wouldn't paint Jake\u2019s back with blue paint for a Halloween costume \n        because Jake\u2019s back was too hairy. Jake will never forget it or forgive him.</p>"
+	}, {
+	    name: "Colin",
+	    title: "Groomsman",
+	    imageUrl: "/images/people/colin.jpg",
+	    yearsKnown: "23",
+	    bio: "<p>As Colin\u2019s body grew to match his head, so did his place in Jake\u2019s heart.</p>"
+	}, {
+	    name: "Josh",
+	    title: "Groomsman",
+	    imageUrl: "/images/people/josh.jpg",
+	    yearsKnown: "15",
+	    bio: "<p>Josh and Jake bonded over the ancient proverb, \u201CMoney can\u2019t buy knives.\u201D</p>"
+	}, {
+	    name: "Ryan",
+	    title: "Groomsman",
+	    imageUrl: "/images/people/ryan.jpg",
+	    yearsKnown: "10",
+	    bio: "<p>Ryan's bio is coming soon...</p>"
+	}, {
+	    name: "Shawn",
+	    title: "Groomsman",
+	    imageUrl: "http://placehold.it/200x200",
+	    yearsKnown: "7",
+	    bio: "<p>Shawn once threw up on a pair of Jake\u2019s work boots\u2026 so Jake stole Shawn\u2019s shoes. SHHH\u2026 he doesn\u2019t know.</p>"
+	}, {
+	    name: "Landon",
+	    title: "Ring Bearer",
+	    imageUrl: "http://placehold.it/200x200",
+	    yearsKnown: "7",
+	    bio: "<p>Landon's bio is coming soon...</p>"
+	}, {
+	    name: "Duke",
+	    title: "Ring Bearer",
+	    imageUrl: "/images/people/duke.jpg",
+	    yearsKnown: "3",
+	    bio: "<p>Duuuuuuuuuuuuke!!</p>"
+	}];
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.render = function (model) {
+	    return "\n        <div id='wedding-party'>\n            <div class='view-title'>\n                <hr/>\n                <h2 class='view-title'>Wedding Party</h2>\n            </div>\n            <div id='bridesmaids'></div>\n            <div id='groomsmen'></div>\n        </div>\n    ";
 	};
 
 /***/ }

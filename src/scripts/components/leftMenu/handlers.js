@@ -15,9 +15,13 @@ module.exports = function(leftMenu) {
         },
         menuSwipeLeft(e, swipe) {
             actions.toggleMenu(false);
+            e.preventDefault();
         },
         bodySwipeRight(e, swipe) {
-            if (swipe.start.x < 30) actions.toggleMenu(true);
+            if (swipe.start.x < 30) {
+                actions.toggleMenu(true);
+                e.preventDefault();
+            }
         },
         linkClick(e) {
             if (e.currentTarget && e.currentTarget.href) {

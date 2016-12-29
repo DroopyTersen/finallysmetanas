@@ -29,7 +29,7 @@ body {
         h2 {
             text-transform: uppercase;
             font-size: 1.75em;
-            letter-spacing: 9px;
+            letter-spacing: 7px;
             margin-top: 10px;
             // font-weight: 400;
         }
@@ -48,7 +48,11 @@ body {
 @media screen and (max-width: 850px) {
     .main-content {
         margin: 70px auto;
-
+        .view-title {
+            h2 {
+                font-size: 1.5em;
+            }
+        }
         p {
             font-size:1.1em;
             padding:0 20px;
@@ -59,4 +63,5 @@ body {
         }
     }
 }
-@import 'navbar'
+@import 'navbar';
+@import 'personGrid';

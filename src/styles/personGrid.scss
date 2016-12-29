@@ -1,0 +1,97 @@
+// test
+.person-grid {
+    margin-bottom: 50px;
+    position:relative;
+    .grid-title {
+        color: #555;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size:1.3em;
+    }
+    .person-details {
+        display:none;
+            &.active {
+                display: block;
+                background: #f7f7f7;
+                padding: 0;
+                position: absolute;
+                top: 100px;
+                width: 500px;
+                left: 150px;
+                border: 1px solid #eee;
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.41);
+                .content {
+                    padding: 20px;
+                }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 15px;
+            cursor:pointer;
+            opacity: .75;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li.person {
+            width: 200px;
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+            cursor:pointer;
+            opacity:.85;
+            &:hover {
+                opacity: 1;
+            }
+            img {
+                width: 100%;
+            }
+            .caption {
+                position: absolute;
+                bottom: 4px;
+                width: 100%;
+                padding: 5px 0;
+                background: rgba(0, 0, 0, .4);
+                color:#fff;
+                font-size: 1.15em;
+                .name {
+                    letter-spacing: 1.5px;
+                }
+                .title {
+                    font-size: .9em;
+                    opacity: .75;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .person-grid {
+        .person-details.active {
+            position: fixed;
+            top:60px;
+            width:94%;
+            left:3%;
+            z-index: 1;
+        }
+        ul {
+            li.person {
+                width: 40%;
+                margin: 3px;
+                .caption {
+                    font-size: .95em;
+                }
+            }
+        }
+    }
+}

@@ -23,7 +23,7 @@ body {
   .main-content .view-title h2 {
     text-transform: uppercase;
     font-size: 1.75em;
-    letter-spacing: 9px;
+    letter-spacing: 7px;
     margin-top: 10px; }
   .main-content img {
     max-width: 100%; }
@@ -35,6 +35,8 @@ body {
 @media screen and (max-width: 850px) {
   .main-content {
     margin: 70px auto; }
+    .main-content .view-title h2 {
+      font-size: 1.5em; }
     .main-content p {
       font-size: 1.1em;
       padding: 0 20px; }
@@ -143,3 +145,77 @@ nav.nav-bar {
             width: 25px;
             text-align: right;
             color: #c3c3c3; } }
+
+.person-grid {
+  margin-bottom: 50px;
+  position: relative; }
+  .person-grid .grid-title {
+    color: #555;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.3em; }
+  .person-grid .person-details {
+    display: none; }
+    .person-grid .person-details.active {
+      display: block;
+      background: #f7f7f7;
+      padding: 0;
+      position: absolute;
+      top: 100px;
+      width: 500px;
+      left: 150px;
+      border: 1px solid #eee;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.41); }
+      .person-grid .person-details.active .content {
+        padding: 20px; }
+    .person-grid .person-details .close-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 15px;
+      cursor: pointer;
+      opacity: .75; }
+      .person-grid .person-details .close-btn:hover {
+        opacity: 1; }
+  .person-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .person-grid ul li.person {
+      width: 200px;
+      display: inline-block;
+      margin: 10px;
+      position: relative;
+      cursor: pointer;
+      opacity: .85; }
+      .person-grid ul li.person:hover {
+        opacity: 1; }
+      .person-grid ul li.person img {
+        width: 100%; }
+      .person-grid ul li.person .caption {
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        padding: 5px 0;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        font-size: 1.15em; }
+        .person-grid ul li.person .caption .name {
+          letter-spacing: 1.5px; }
+        .person-grid ul li.person .caption .title {
+          font-size: .9em;
+          opacity: .75; }
+
+@media screen and (max-width: 850px) {
+  .person-grid .person-details.active {
+    position: fixed;
+    top: 60px;
+    width: 94%;
+    left: 3%;
+    z-index: 1; }
+  .person-grid ul li.person {
+    width: 40%;
+    margin: 3px; }
+    .person-grid ul li.person .caption {
+      font-size: .95em; } }

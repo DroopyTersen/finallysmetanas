@@ -1,6 +1,6 @@
 var views = require("../views");
 var activeView = views.findByPath(location.pathname)
-var data = require("../data");
+
 var state = {
     activeView,
     menu: {
@@ -8,8 +8,9 @@ var state = {
         isOpen: false,
         activePath: activeView.path,
         links: views.getLinks()
-    },
-    thecouple: data.thecouple
+    }
 }
 
+// add in hardcoded data
+state = Object.assign({}, require("../data"), state);
 module.exports = state;

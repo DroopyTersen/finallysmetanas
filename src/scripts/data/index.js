@@ -1,3 +1,5 @@
 module.exports = {
-    thecouple: require("./thecouple")
+    thecouple: require("./thecouple"),
+    bridesmaids: require("./bridesmaids"),
+    groomsmen: require("./groomsmen")
 }
