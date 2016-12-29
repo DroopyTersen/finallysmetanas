@@ -1,10 +1,12 @@
 var bodyParser = require("body-parser");
 var express = require("express");
 var favicon = require('serve-favicon');
+var compression = require("compression");
 var config = { port: process.env.PORT || 3005 };
 var app = express();
 
 
+app.use(compression())
 app.use(bodyParser.json());
 // Use custom favicon
 app.use(favicon(__dirname + '/images/favicon.ico'));

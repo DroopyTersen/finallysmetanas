@@ -7,7 +7,7 @@
     "build": "npm run build:css & npm run build:js",
     "build:js": "webpack -p",
     "build:css": "node-sass src/styles/site.scss -o dist && cleancss -o dist/site.min.css dist/site.css",
-    "watch:js": "webpack --watch",
+    "watch:js": "webpack -p --watch",
     "watch:css": "node-sass --watch src/styles/site.scss -o dist",
     "clean": "rimraf dist"
   },
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/droopytersen/finallysmetanas#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
     "droopy-events": "^0.0.0",
     "express": "^4.14.0",
     "serve-favicon": "^2.3.2"
