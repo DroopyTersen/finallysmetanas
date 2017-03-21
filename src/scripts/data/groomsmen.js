@@ -38,14 +38,14 @@ module.exports = [
     {
         name: "Shawn",
         title: "Groomsman",
-        imageUrl: "http://placehold.it/200x200",
+        imageUrl: "/images/people/shawn.jpg",
         yearsKnown: "7",
         bio: `<p>Shawn once threw up on a pair of Jake’s work boots… so Jake stole Shawn’s shoes. SHHH… he doesn’t know.</p>`
     },
     {
         name: "Landon",
         title: "Ring Bearer",
-        imageUrl: "http://placehold.it/200x200",
+        imageUrl: "/images/people/landon.jpg",
         yearsKnown: "7",
         bio: `<p>Landon's bio is coming soon...</p>`
     },

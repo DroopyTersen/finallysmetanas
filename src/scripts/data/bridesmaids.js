@@ -24,7 +24,7 @@ module.exports = [
     {
         name: "Kristin",
         title: "Bridesmaid",
-        imageUrl: "http://placehold.it/200x200",
+        imageUrl: "/images/people/kristin.jpg",
         yearsKnown: "12",
         bio: `<p>Kristin was the first person to find out Ang and Jake had become an official couple back in 2005. Even before Angela.</p>`
     },
@@ -45,7 +45,7 @@ module.exports = [
     {
         name: "Lily",
         title: "Flower Girl",
-        imageUrl: "http://placehold.it/200x200",
+        imageUrl: "/images/people/lily.jpg",
         yearsKnown: "3",
         bio: `<p>Lily's bio is coming soon...</p>`
     }
