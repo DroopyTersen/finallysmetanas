@@ -16,11 +16,11 @@
         }
     }
     .event {
-            position: absolute;
-            bottom: -250px;
-            background: rgb(18, 18, 18);
-            width: 100%;
-            margin-top: 20px;
+        position: absolute;
+        bottom: -250px;
+        background: rgb(18, 18, 18);
+        width: 100%;
+        margin-top: 20px;
         .label {
             margin-top: 30px;
             font-size: 3em;
@@ -63,13 +63,28 @@
             font-size: 1.5em;
         }
         .event {
+            bottom: -200px;
             .label {
-                font-size: 1.3em;
+                font-size: 1.2em;
                 letter-spacing: 8px;
                 .small {
                     top: -6px;
                     font-size: .6em;
                     letter-spacing: 4px;
+                }
+            }
+            .date {
+                font-size: 6rem;
+                line-height: 4rem;
+                margin-bottom: 40px;
+            }
+            .details {
+                text-transform: uppercase;
+                font-size: .8em;
+                letter-spacing: 4px;
+                a {
+                    color: #eee;
+                    text-decoration: none;
                 }
             }
         }

@@ -51,10 +51,23 @@
     margin-top: -20px; }
     .main-content > .save-the-date .couple-title {
       font-size: 1.5em; }
-    .main-content > .save-the-date .event .label {
-      font-size: 1.3em;
-      letter-spacing: 8px; }
-      .main-content > .save-the-date .event .label .small {
-        top: -6px;
-        font-size: .6em;
-        letter-spacing: 4px; } }
+    .main-content > .save-the-date .event {
+      bottom: -200px; }
+      .main-content > .save-the-date .event .label {
+        font-size: 1.2em;
+        letter-spacing: 8px; }
+        .main-content > .save-the-date .event .label .small {
+          top: -6px;
+          font-size: .6em;
+          letter-spacing: 4px; }
+      .main-content > .save-the-date .event .date {
+        font-size: 6rem;
+        line-height: 4rem;
+        margin-bottom: 40px; }
+      .main-content > .save-the-date .event .details {
+        text-transform: uppercase;
+        font-size: .8em;
+        letter-spacing: 4px; }
+        .main-content > .save-the-date .event .details a {
+          color: #eee;
+          text-decoration: none; } }
