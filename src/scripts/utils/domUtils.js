@@ -19,14 +19,17 @@ var addClass = exports.addClass = function(elem, className) {
         classes.push(className);
         elem.className = classes.join(" ");
     }
+    return elem;
 }
 
 var removeClass = exports.removeClass = function(elem, className) {
     var classes = getClassList(elem).filter(c => c !== className);
     elem.className = classes.join(" ");
+    return elem;
 }
 
 var toggleClass = exports.toggleClass = function(elem, className) {
     if (hasClass(elem, className)) removeClass(elem, className)
     else addClass(elem, className);
+    return elem;
 }

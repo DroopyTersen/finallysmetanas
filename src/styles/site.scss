@@ -71,9 +71,12 @@ body {
 
 @media screen and (max-width: 850px) {
     .main-content {
-        margin: 70px auto;
-        .save-the-date {
-            margin: 50px auto;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        > div {
+            margin: 70px auto;
         }
         .view-title {
             h2 {

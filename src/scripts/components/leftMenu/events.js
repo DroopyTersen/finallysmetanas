@@ -18,6 +18,6 @@ var bindEvents = exports.bindEvents = function(leftMenu) {
 
     // Open and close the menu with a swipe
     leftMenu.menuSwiper.on("swipe-left", leftMenu.handlers.menuSwipeLeft);
-    leftMenu.bodySwiper.on("swiping", leftMenu.handlers.bodySwiping);
-    leftMenu.bodySwiper.on("swipe", leftMenu.handlers.bodySwipe);
+    //leftMenu.bodySwiper.on("swiping", leftMenu.handlers.bodySwiping);
+    //leftMenu.bodySwiper.on("swipe", leftMenu.handlers.bodySwipe);
 }
