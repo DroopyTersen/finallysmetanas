@@ -1,5 +1,5 @@
 module.exports = {
-    imageUrl: "/images/couple.jpg",
+    imageUrl: "/images/thecouple.jpg",
     content:   `
 <p class='tagline'>Hi, we’re Jake and Angela. We’re pretty fond of one another.</p>
 <hr />

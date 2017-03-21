@@ -70,6 +70,9 @@ body {
 @media screen and (max-width: 850px) {
     .main-content {
         margin: 70px auto;
+        .save-the-date {
+            margin: 50px auto;
+        }
         .view-title {
             h2 {
                 font-size: 1.5em;
@@ -87,3 +90,4 @@ body {
 }
 @import 'navbar';
 @import 'personGrid';
+@import 'savethedate';

@@ -12,7 +12,7 @@ var leftMenu = {
         leftMenu.container = dom.findOne(leftMenu.selectors.container);
         leftMenu.render();
         leftMenu.element = dom.findOne(leftMenu.selectors.menu);
-        leftMenu.bodySwiper = new Swiper();
+        leftMenu.bodySwiper = new Swiper(".main-content");
         leftMenu.menuSwiper = new Swiper(leftMenu.selectors.menu);
         require("./events").bindEvents(leftMenu);
         leftMenu.setActive();

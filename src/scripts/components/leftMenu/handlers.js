@@ -3,6 +3,7 @@ var dom = require("../../utils/domUtils");
 
 var mainContent = document.querySelector(".main-content");
 var htmlEl = document.querySelector("html");
+const LEFT_ZONE_SIZE = 50;
 module.exports = function(leftMenu) {
     leftMenu.handlers = {
         triggerClick(e) {
@@ -24,7 +25,7 @@ module.exports = function(leftMenu) {
             
         },
         bodySwiping(e, swipe) {
-            if (swipe.start.x > 30 && swipe.distance > 40 && (swipe.direction === "left" || swipe.direction === "right")) {
+            if (swipe.start.x > LEFT_ZONE_SIZE && swipe.distance > 40 && (swipe.direction === "left" || swipe.direction === "right")) {
                 // skip swiping stuff if it is a menu swipe
                 if (!isMenuSwipe(e)) {
                     var left = swipe.direction === "left" ? swipe.distance * -1 : swipe.distance;
@@ -43,7 +44,7 @@ module.exports = function(leftMenu) {
         bodySwipe(e, swipe) {
 
             if (!e.cancelBubble) {
-                if (swipe.direction === "right" && swipe.start.x < 30) {
+                if (swipe.direction === "right" && swipe.start.x < LEFT_ZONE_SIZE) {
                     actions.toggleMenu(true);
                 } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right") && !isMenuSwipe(e) ) {
                     dom.addClass(mainContent, "hide");

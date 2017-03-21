@@ -4,7 +4,7 @@ var template = require("./template");
 var view = {
     title: "The Couple",
     icon: "heart",
-    path: "/"
+    path: "/thecouple"
 };
 
 view.init = function(state) {

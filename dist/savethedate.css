@@ -1,0 +1,60 @@
+.save-the-date .image-container {
+  position: relative;
+  text-align: center; }
+  .save-the-date .image-container .couple-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    margin: 0 auto;
+    width: 100%;
+    /* top: 10px; */
+    color: #7d7d7d;
+    letter-spacing: 2px;
+    font-size: 2.75em;
+    font-style: italic; }
+
+.save-the-date .event {
+  position: absolute;
+  bottom: -250px;
+  background: #121212;
+  width: 100%;
+  margin-top: 20px; }
+  .save-the-date .event .label {
+    margin-top: 30px;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 14px;
+    font-weight: bold;
+    color: #fff; }
+    .save-the-date .event .label .small {
+      font-size: .5em;
+      position: relative;
+      top: -11px;
+      letter-spacing: 7px; }
+  .save-the-date .event .date {
+    color: #d36565;
+    font-size: 12rem;
+    font-weight: bolder;
+    font-family: "Playfair Display", serif;
+    line-height: 6rem;
+    margin-bottom: 80px; }
+  .save-the-date .event .details {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 30px; }
+    .save-the-date .event .details a {
+      color: #eee;
+      text-decoration: none; }
+
+@media screen and (max-width: 850px) {
+  .main-content > .save-the-date {
+    margin-top: -20px; }
+    .main-content > .save-the-date .couple-title {
+      font-size: 1.5em; }
+    .main-content > .save-the-date .event .label {
+      font-size: 1.3em;
+      letter-spacing: 8px; }
+      .main-content > .save-the-date .event .label .small {
+        top: -6px;
+        font-size: .6em;
+        letter-spacing: 4px; } }

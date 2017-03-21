@@ -6,7 +6,7 @@ exports.render = function(model) {
                 <h2 class='view-title'>The Couple</h2>
             </div>
             <div class='image-container'>
-                <img style='filter: sepia(50%); webkit-filter: sepia(50%);' src='${model.imageUrl}'>
+                <img style='filter: sepia(35%); webkit-filter: sepia(35%);' src='${model.imageUrl}'>
             </div>
             <div class='content'>
                 ${model.content}
