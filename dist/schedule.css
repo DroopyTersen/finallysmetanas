@@ -1,12 +1,16 @@
 .schedule .events hr {
-  width: 80%; }
+  width: 80%;
+  margin: 10px auto; }
 
 .schedule .events .event {
-  padding: 10px 0; }
+  padding: 20px 0; }
   .schedule .events .event .title, .schedule .events .event .date, .schedule .events .event .time, .schedule .events .event .location {
     margin: 0; }
   .schedule .events .event .title {
-    font-family: "Playfair Display", serif; }
+    font-family: "Playfair Display", serif;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-size: 1.5em; }
   .schedule .events .event .date {
     color: #555;
     text-transform: uppercase;
@@ -15,5 +19,9 @@
   .schedule .events .event .time {
     color: #666;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 20px; }
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 1.25em; }
+  .schedule .events .event .details {
+    margin-bottom: 0; }

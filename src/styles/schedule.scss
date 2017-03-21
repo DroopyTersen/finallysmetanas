@@ -2,14 +2,18 @@
     .events {
         hr {
             width: 80%;
+            margin: 10px auto;
         }
         .event {
-            padding: 10px 0;
+            padding: 20px 0;
             .title,.date,.time,.location {
                 margin: 0;
             }
             .title {
                 font-family: "Playfair Display", serif;
+                margin-top: 10px;
+                letter-spacing: 2px;
+                font-size: 1.5em;
             }
             .date {
                 color: #555;
@@ -20,8 +24,13 @@
             .time {
                 color: #666;
                 text-transform: uppercase;
-                letter-spacing: 4px;
+                letter-spacing: 2px;
                 margin-bottom: 20px;
+                font-weight: 200;
+                font-size: 1.25em;
+            }
+            .details {
+                margin-bottom: 0;
             }
         }
     
