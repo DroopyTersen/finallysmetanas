@@ -1,0 +1,29 @@
+.schedule {
+    .events {
+        hr {
+            width: 80%;
+        }
+        .event {
+            padding: 10px 0;
+            .title,.date,.time,.location {
+                margin: 0;
+            }
+            .title {
+                font-family: "Playfair Display", serif;
+            }
+            .date {
+                color: #555;
+                text-transform: uppercase;
+                font-size: .85em;
+                letter-spacing: 2px;
+            }
+            .time {
+                color: #666;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                margin-bottom: 20px;
+            }
+        }
+    
+    }
+}

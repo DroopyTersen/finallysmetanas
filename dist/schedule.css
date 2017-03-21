@@ -1,0 +1,19 @@
+.schedule .events hr {
+  width: 80%; }
+
+.schedule .events .event {
+  padding: 10px 0; }
+  .schedule .events .event .title, .schedule .events .event .date, .schedule .events .event .time, .schedule .events .event .location {
+    margin: 0; }
+  .schedule .events .event .title {
+    font-family: "Playfair Display", serif; }
+  .schedule .events .event .date {
+    color: #555;
+    text-transform: uppercase;
+    font-size: .85em;
+    letter-spacing: 2px; }
+  .schedule .events .event .time {
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px; }
