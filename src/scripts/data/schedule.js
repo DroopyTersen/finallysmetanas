@@ -8,7 +8,7 @@ module.exports = [
         it won’t be real in our eyes until you help us make the commitment. 
         After handwritten vows, a couple of readings and some lip-locking, we’ll consider this a sealed deal.`
     },
-    {
+    { 
         title: "Cocktail Hour",
         date: "Saturday, November 25",
         time: "4:45pm",

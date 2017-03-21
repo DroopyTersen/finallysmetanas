@@ -7,14 +7,20 @@ nav.nav-bar {
   position: relative;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: #333; }
+  color: #333;
+  background: #fff;
+  z-index: 1; }
   nav.nav-bar #menu-trigger {
     display: none;
     font-size: 1.7em;
     position: absolute;
+    cursor: pointer;
     top: 0;
     left: 0;
-    padding: 9px 15px; }
+    padding: 9px 15px;
+    opacity: .9; }
+    nav.nav-bar #menu-trigger:hover {
+      opacity: 1; }
   nav.nav-bar #mobile-title {
     display: none; }
   nav.nav-bar ul {

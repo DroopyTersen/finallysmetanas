@@ -3,5 +3,6 @@ module.exports = {
     bridesmaids: require("./bridesmaids"),
     groomsmen: require("./groomsmen"),
     registry: require("./registry"),
-    savethedate: require("./savethedate")
+    savethedate: require("./savethedate"),
+    schedule: require("./schedule")
 }

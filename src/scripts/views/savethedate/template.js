@@ -1,6 +1,7 @@
 exports.render = function(model) {
     return `
         <div class='save-the-date'>
+            <h1 class='couple-title'>${model.title}</h1>
             <div class='image-container'>
                 <img style='filter: sepia(20%); webkit-filter: sepia(20%);' src='${model.imageUrl}'>
                 <div class='event'>
@@ -20,4 +21,3 @@ exports.render = function(model) {
         </div>
     `
 }
-                // <h1 class='couple-title'>${model.title}</h1>
