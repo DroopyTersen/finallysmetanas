@@ -1,0 +1,14 @@
+.travel p {
+  text-align: center; }
+
+.travel .place {
+  font-size: 1.2em;
+  margin-bottom: 0; }
+
+.travel .book-by {
+  margin: 0;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-size: .85em; }
