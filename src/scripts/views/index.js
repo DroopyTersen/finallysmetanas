@@ -6,7 +6,7 @@ var views = [
     require("./schedule"),
     require("./rsvp"),
     require("./registry"),
-    require("./place"),
+    //require("./place"),
     require("./travel"),
 ];
 

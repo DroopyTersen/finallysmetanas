@@ -12,9 +12,9 @@
   /* top: 10px; */
   color: #ffffff;
   letter-spacing: 2px;
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0 0 4px;
-  padding: 30px 0;
+  padding: 5px 0;
   background: #121212;
   display: none; }
 
@@ -55,18 +55,24 @@
 @media screen and (max-width: 850px) {
   .main-content .save-the-date {
     position: absolute;
-    bottom: 0;
+    height: 100%;
     margin: 0; }
+    .main-content .save-the-date .image-container {
+      margin-top: 50px; }
     .main-content .save-the-date .couple-title {
       display: block;
-      background: #fff;
-      color: #333; }
+      background: rgba(0, 0, 0, 0.38);
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      font-size: 1.5em;
+      padding: 5px 0 10px; }
     .main-content .save-the-date img {
       position: relative;
       top: 0; }
     .main-content .save-the-date .event {
-      padding: 10px 0;
-      position: inherit;
+      padding: 0;
+      position: relative;
       margin: 0;
       bottom: 0;
       background: #fff; }
