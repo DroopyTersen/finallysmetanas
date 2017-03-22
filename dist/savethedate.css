@@ -52,6 +52,10 @@
       color: #eee;
       text-decoration: none; }
 
+@media screen and (max-width: 850px) and (min-width: 500px) {
+  .save-the-date .event .label {
+    font-size: 2em; } }
+
 @media screen and (max-width: 850px) {
   .main-content .save-the-date {
     position: absolute;

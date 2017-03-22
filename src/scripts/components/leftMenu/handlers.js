@@ -46,17 +46,18 @@ module.exports = function(leftMenu) {
             if (!e.cancelBubble) {
                 if (swipe.direction === "right" && swipe.start.x < LEFT_ZONE_SIZE) {
                     actions.toggleMenu(true);
-                } else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right") && !isMenuSwipe(e) ) {
-                    dom.addClass(mainContent, "hide");
-                    setTimeout(() => {
-                        mainContent.style.left = "inherit";
-                        dom.removeClass(mainContent, "hide");
-                    }, 100);
-                    var dir = swipe.direction === "left" ? 1 : -1;
-                    actions.navigate(dir)
-                } else {
-                    mainContent.style.left = "inherit";
-                }
+                } 
+                // else if (swipe.distance > 125 && (swipe.direction === "left" || swipe.direction === "right") && !isMenuSwipe(e) ) {
+                //     dom.addClass(mainContent, "hide");
+                //     setTimeout(() => {
+                //         mainContent.style.left = "inherit";
+                //         dom.removeClass(mainContent, "hide");
+                //     }, 100);
+                //     var dir = swipe.direction === "left" ? 1 : -1;
+                //     actions.navigate(dir)
+                // } else {
+                //     mainContent.style.left = "inherit";
+                // }
             } else {
                 mainContent.style.left = "inherit";
             }
