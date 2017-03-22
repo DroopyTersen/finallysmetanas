@@ -1,6 +1,5 @@
 var template = require("./template.js");
 var dom = require("../../utils/domUtils");
-var Modals = require("../modal");
 exports.create = function(selector, state) {
     var selectors = {
         closeBtn: selector + " .person-details .close-btn",
