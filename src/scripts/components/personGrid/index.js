@@ -1,6 +1,6 @@
 var template = require("./template.js");
 var dom = require("../../utils/domUtils");
-
+var Modals = require("../modal");
 exports.create = function(selector, state) {
     var selectors = {
         closeBtn: selector + " .person-details .close-btn",
@@ -33,7 +33,7 @@ exports.create = function(selector, state) {
 
     var bindEvents = function() {
         dom.find(selectors.person).forEach(li => {
-            //li.addEventListener("click", onPersonClick);
+            li.addEventListener("click", onPersonClick);
         })
         dom.findOne(selectors.closeBtn).addEventListener("click", closePersonDetails);
     };

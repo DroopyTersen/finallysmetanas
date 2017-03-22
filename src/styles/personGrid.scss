@@ -1,37 +1,64 @@
-// test
+ // test
 .person-grid {
     margin-bottom: 50px;
-    position:relative;
+    position: relative;
     .grid-title {
         color: #555;
         letter-spacing: 1.2px;
         text-transform: uppercase;
         font-weight: 400;
-        font-size:1.3em;
+        font-size: 1.3em;
     }
     .person-details {
-        display:none;
-            &.active {
-                display: block;
-                background: #f7f7f7;
-                padding: 0;
-                position: absolute;
-                top: 100px;
-                width: 500px;
-                left: 150px;
-                border: 1px solid #eee;
-                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.41);
-                .content {
-                    padding: 20px;
+        display: none;
+        opacity: 0;
+        transition: opacity .2s ease-in;
+        z-index: 99;
+        &.active {
+            opacity: 1;
+            display: block;
+            background: #f7f7f7;
+            padding: 0;
+            position: fixed;
+            top: 55px;
+            width: 40%;
+            left: 30%;
+            border: 1px solid #eee;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.41);
+            .content {
+                padding: 5px 20px;
+                .name {
+                    font-family: "Playfair Display", serif;
+                    letter-spacing: 3px;
+                    font-style: italic;
+                    font-size: 2.5em;
+                    margin: 10px 0 20px;
+                    border-bottom: 1px solid #ccc;
+                    padding-bottom: 7px;
                 }
+                .knownfor {
+                    font-size: 1em;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: #444;
+                    margin-top: 10px;
+                }
+                .bio {
+                    p {
+                        text-align: center;
+                    }
+                }
+                img {
+                    max-height: 375px;
+                }
+            }
         }
-
         .close-btn {
             position: absolute;
             top: 0;
             right: 0;
             padding: 15px;
-            cursor:pointer;
+            cursor: pointer;
             opacity: .75;
             &:hover {
                 opacity: 1;
@@ -47,8 +74,8 @@
             display: inline-block;
             margin: 10px;
             position: relative;
-            cursor:pointer;
-            opacity:.85;
+            cursor: pointer;
+            opacity: .85;
             &:hover {
                 opacity: 1;
             }
@@ -62,7 +89,7 @@
                 width: 100%;
                 padding: 5px 0;
                 background: rgba(0, 0, 0, .4);
-                color:#fff;
+                color: #fff;
                 font-size: 1.15em;
                 .name {
                     letter-spacing: 1.5px;
@@ -80,10 +107,11 @@
     .person-grid {
         .person-details.active {
             position: fixed;
-            top:60px;
-            width:94%;
-            left:3%;
-            z-index: 1;
+            top: 0px;
+            width: 100%;
+            left: 0;
+            z-index: 2;
+            min-height: 100%;
         }
         ul {
             li.person {

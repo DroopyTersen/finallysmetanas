@@ -1,5 +1,5 @@
 var find = exports.find = function(selector) {
-    return [...document.querySelectorAll(selector)];
+    return [].slice.call(document.querySelectorAll(selector), 0);
 };
 
 var findOne = exports.findOne = function(selector) {
@@ -32,4 +32,10 @@ var toggleClass = exports.toggleClass = function(elem, className) {
     if (hasClass(elem, className)) removeClass(elem, className)
     else addClass(elem, className);
     return elem;
+}
+
+var append = exports.append = function(selector, html) {
+    var elem = find(selector);
+    if (elem) elem.innerHTML = elem.innerHTML + html
+    else throw new Error("Unable to find element: " + selector);
 }

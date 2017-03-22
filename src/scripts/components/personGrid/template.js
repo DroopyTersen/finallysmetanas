@@ -12,8 +12,8 @@ var renderPerson = function(person) {
 
 exports.renderDetails = function(person) {
     return `
-        <img src='/images/people/${person.name.toLowerCase()}.jpg'>
         <h3 class='name'>${person.name}</h3>
+        <img src='/images/people/${person.name.toLowerCase()}.jpg'>
         <div class='knownfor'>Known for ${person.yearsKnown} years</div>
         <div class='bio'>
             ${person.bio}
