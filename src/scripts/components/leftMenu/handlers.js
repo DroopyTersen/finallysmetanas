@@ -3,7 +3,7 @@ var dom = require("../../utils/domUtils");
 
 var mainContent = document.querySelector(".main-content");
 var htmlEl = document.querySelector("html");
-const LEFT_ZONE_SIZE = 50;
+const LEFT_ZONE_SIZE = 80;
 module.exports = function(leftMenu) {
     leftMenu.handlers = {
         triggerClick(e) {
