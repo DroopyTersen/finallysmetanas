@@ -980,8 +980,8 @@ nav.nav-bar {
           max-height: 375px; }
     .person-grid .person-details .close-btn {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 5px;
+      right: 5px;
       padding: 15px;
       cursor: pointer;
       opacity: .75; }
@@ -1012,9 +1012,11 @@ nav.nav-bar {
         color: #fff;
         font-size: 1.15em; }
         .person-grid ul li.person .caption .name {
-          letter-spacing: 1.5px; }
+          letter-spacing: 1.5px;
+          font-family: "Playfair Display", serif;
+          font-style: italic; }
         .person-grid ul li.person .caption .title {
-          font-size: .9em;
+          font-size: .85em;
           opacity: .75; }
 
 @media screen and (max-width: 850px) {
@@ -1025,6 +1027,8 @@ nav.nav-bar {
     left: 0;
     z-index: 2;
     min-height: 100%; }
+    .person-grid .person-details.active .content img {
+      max-height: 250px; }
   .person-grid ul li.person {
     width: 40%;
     margin: 3px; }

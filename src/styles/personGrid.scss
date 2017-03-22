@@ -55,8 +55,8 @@
         }
         .close-btn {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 5px;
+            right: 5px;
             padding: 15px;
             cursor: pointer;
             opacity: .75;
@@ -93,9 +93,11 @@
                 font-size: 1.15em;
                 .name {
                     letter-spacing: 1.5px;
+                    font-family: "Playfair Display", serif;
+                    font-style: italic;
                 }
                 .title {
-                    font-size: .9em;
+                    font-size: .85em;
                     opacity: .75;
                 }
             }
@@ -112,6 +114,15 @@
             left: 0;
             z-index: 2;
             min-height: 100%;
+
+            .content {
+                .name {
+                    // font-size: 2.5em;
+                }
+                img {
+                    max-height: 250px;
+                }
+            }
         }
         ul {
             li.person {
