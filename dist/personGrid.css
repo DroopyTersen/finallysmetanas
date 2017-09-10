@@ -27,9 +27,10 @@
         padding: 5px 20px; }
         .person-grid .person-details.active .content .name {
           font-family: "Playfair Display", serif;
-          letter-spacing: 3px;
+          letter-spacing: 1px;
           font-style: italic;
-          font-size: 2.5em;
+          font-size: 2em;
+          font-weight: 100;
           margin: 10px 0 20px;
           border-bottom: 1px solid #ccc;
           padding-bottom: 7px; }

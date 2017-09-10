@@ -19,7 +19,7 @@ module.exports = [
         title: "Bridesmaid",
         imageUrl: "/images/people/jordan.jpg",
         yearsKnown: "12",
-        bio: `<p>Jordan's Bio is coming soon...</p>`
+        bio: `<p>After being friends for so many years, Ang is damn excited to FINALLY, officially call Jor her cousin.</p>`
     },
     {
         name: "Kristin",
@@ -46,7 +46,7 @@ module.exports = [
         name: "Lily",
         title: "Flower Girl",
         imageUrl: "/images/people/lily.jpg",
-        yearsKnown: "3",
-        bio: `<p>Lily's bio is coming soon...</p>`
+        yearsKnown: "Since Birth (3 years ago)",
+        bio: `<p>While Lily might look as if she is Jake's child, she is actually Ang & Jake's beautiful goddaughter.</p>`
     }
 ]
