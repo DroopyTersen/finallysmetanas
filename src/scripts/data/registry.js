@@ -2,23 +2,15 @@ module.exports = {
     links: [
         {
             title: "Amazon",
-            url: "https://www.amazon.com/"
+            url: "https://www.amazon.com/wedding/share/finallysmetanas"
         },
         {
             title: "Zola",
-            url: "https://www.zola.com/wedding-registry"
-        },
-        {
-            title: "Target",
-            url: "http://www.target.com/"
-        },
-        {
-            title: "West Elm",
-            url: "http://www.westelm.com/"
+            url: "https://www.zola.com/registry/finallysmetanas"
         },
         {
             title: "Bed Bath & Beyond",
-            url: "https://www.bedbathandbeyond.com/"
+            url: "https://www.bedbathandbeyond.com:443/store/giftregistry/view_registry_guest.jsp?registryId=544683343&eventType=Wedding&pwsurl="
         }
     ],
     content: `
@@ -28,5 +20,5 @@ module.exports = {
 
     <p>To add a little copper to our otherwise non-existent Moscow mule collection, 
     you can browse our "wants" over here at Zola. Or, if you feel inclined, take a minute or 
-    two to peruse Target, West Elm, or Bed Bath & Beyond.</p>`
+    two to peruse Amazon or Bed Bath & Beyond.</p>`
 }
