@@ -29,7 +29,7 @@
           font-family: "Playfair Display", serif;
           letter-spacing: 1px;
           font-style: italic;
-          font-size: 2em;
+          font-size: 1.8em;
           font-weight: 100;
           margin: 10px 0 20px;
           border-bottom: 1px solid #ccc;
@@ -41,7 +41,8 @@
           color: #444;
           margin-top: 10px; }
         .person-grid .person-details.active .content .bio p {
-          text-align: center; }
+          text-align: center;
+          font-size: 1em; }
         .person-grid .person-details.active .content img {
           max-height: 375px; }
     .person-grid .person-details .close-btn {

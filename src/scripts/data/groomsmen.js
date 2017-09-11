@@ -4,7 +4,7 @@ module.exports = [
         title: "Best Man",
         yearsKnown: "27",
         imageUrl: "/images/people/jared.jpg",
-        bio: `<p>Jared's Bio is coming soon...</p>`
+        bio: `<p>Jared says he's Batman, but there is photographic proof he's only Robin.</p>`
     },
     {
         name: "Drew",
@@ -33,7 +33,7 @@ module.exports = [
         title: "Groomsman",
         imageUrl: "/images/people/ryan.jpg",
         yearsKnown: "10",
-        bio: `<p>Ryan's bio is coming soon...</p>`
+        bio: `<p>Ryan has been known to make Jake cry-laugh.</p>`
     },
     {
         name: "Shawn",
@@ -46,14 +46,14 @@ module.exports = [
         name: "Landon",
         title: "Ring Bearer",
         imageUrl: "/images/people/landon.jpg",
-        yearsKnown: "7",
-        bio: `<p>Landon's bio is coming soon...</p>`
+        yearsKnown: "3",
+        bio: `<p>Landon's likes include Duke, dinosaurs, Lightning McQueen, and Uncle Jake. In that order.</p>`
     },
     {
         name: "Duke",
         title: "Ring Bearer",
         imageUrl: "/images/people/duke.jpg",
         yearsKnown: "3",
-        bio: `<p>Duuuuuuuuuuuuke!!</p>`
+        bio: `<p>If you don't know who this handsome pupper nugget is, then we're so glad you've emerged from the rock you've been living under! His Royal Highness Duke Joxer Mose Jimothy Windsor Nash Smetana I. is Jake & Ang's baby. He is also the best, smartest, cutest dog in the whole world. Also, follow him on Instagram @Dukethewelshie</p>`
     },
 ]
