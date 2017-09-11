@@ -4,7 +4,7 @@ module.exports = [
         date: "Saturday, November 25",
         time: "4:00pm",
         location: "Racine Masonic Center",
-        details: `Though we will be signing on the dotted line after an intimate Friday mass, 
+        details: `Though we will be signing on the dotted line after an intimate Catholic mass, 
         it won’t be real in our eyes until you help us make the commitment. 
         After handwritten vows, a couple of readings and some lip-locking, we’ll consider this a sealed deal.`
     },
@@ -28,7 +28,7 @@ module.exports = [
         title: "Brunch",
         date: "Sunday, November 26",
         time: "11:00am",
-        location: "???",
-        details: "More to come..."
+        location: "TBD",
+        details: "We're still sorting out the details, so check back!"
     },
 ]
