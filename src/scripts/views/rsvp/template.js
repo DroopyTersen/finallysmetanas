@@ -6,7 +6,7 @@ exports.render = function(model) {
                 <h2 class='view-title'>RSVP</h2>
             </div>
             <div class='content'>
-                <p>Coming soon...</p>
+                Loading...
             </div>
         </div>
     `
