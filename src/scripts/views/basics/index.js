@@ -3,7 +3,7 @@ var template = require("./template");
 
 var view = {
     title: "The Basics",
-    icon: "question",
+    icon: "check-square",
     path: "/thebasics"
 };
 
