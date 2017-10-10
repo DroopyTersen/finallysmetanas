@@ -39,7 +39,7 @@ nav.nav-bar {
       position: relative;
       border-top: 4px solid #fff; }
       nav.nav-bar ul > li.active {
-        border-color: #333; }
+        border-color: #526D5E; }
       nav.nav-bar ul > li > a {
         padding: 1em 1em;
         color: #333;
@@ -90,7 +90,7 @@ nav.nav-bar {
         height: auto; }
         nav.nav-bar ul > li.active {
           border-color: #fff;
-          border-right: 5px solid #000; }
+          border-right: 5px solid #526D5E; }
           nav.nav-bar ul > li.active > a {
             color: #000; }
             nav.nav-bar ul > li.active > a i.fa {

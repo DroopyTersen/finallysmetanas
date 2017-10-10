@@ -865,7 +865,7 @@ nav.nav-bar {
       position: relative;
       border-top: 4px solid #fff; }
       nav.nav-bar ul > li.active {
-        border-color: #333; }
+        border-color: #526D5E; }
       nav.nav-bar ul > li > a {
         padding: 1em 1em;
         color: #333;
@@ -916,7 +916,7 @@ nav.nav-bar {
         height: auto; }
         nav.nav-bar ul > li.active {
           border-color: #fff;
-          border-right: 5px solid #000; }
+          border-right: 5px solid #526D5E; }
           nav.nav-bar ul > li.active > a {
             color: #000; }
             nav.nav-bar ul > li.active > a i.fa {
@@ -1037,12 +1037,14 @@ nav.nav-bar {
     .person-grid ul li.person .caption {
       font-size: .95em; } }
 
+.save-the-date .ornament {
+  margin-bottom: 20px; }
+
 .save-the-date .image-container {
   position: relative;
   text-align: center; }
   .save-the-date .image-container img {
-    position: relative;
-    top: -30px; }
+    position: relative; }
 
 .save-the-date .couple-title {
   font-family: "Playfair Display", serif;
@@ -1061,36 +1063,14 @@ nav.nav-bar {
 .save-the-date .event {
   position: absolute;
   bottom: -60px;
-  background: #121212;
+  background: white;
+  padding: 30px 80px;
+  box-sizing: border-box;
   width: 100%;
   margin-top: 20px; }
-  .save-the-date .event .label {
-    margin-top: 30px;
-    font-size: 3em;
-    text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 14px;
-    font-weight: bold;
-    color: #fff; }
-    .save-the-date .event .label .small {
-      font-size: .5em;
-      position: relative;
-      top: -11px;
-      letter-spacing: 7px; }
-  .save-the-date .event .date {
-    color: #d36565;
-    font-size: 12rem;
-    font-weight: bolder;
-    font-family: "Playfair Display", serif;
-    line-height: 6rem;
-    margin-bottom: 80px; }
-  .save-the-date .event .details {
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    margin-bottom: 30px; }
-    .save-the-date .event .details a {
-      color: #eee;
-      text-decoration: none; }
+  .save-the-date .event img {
+    width: 100%;
+    max-width: 380px; }
 
 @media screen and (max-width: 850px) and (min-width: 500px) {
   .save-the-date .event .label {
@@ -1101,8 +1081,8 @@ nav.nav-bar {
     position: absolute;
     height: 100%;
     margin: 0; }
-    .main-content .save-the-date .image-container {
-      margin-top: 50px; }
+    .main-content .save-the-date .ornament {
+      margin: 65px auto 10px; }
     .main-content .save-the-date .couple-title {
       display: block;
       background: rgba(0, 0, 0, 0.38);
@@ -1115,7 +1095,7 @@ nav.nav-bar {
       position: relative;
       top: 0; }
     .main-content .save-the-date .event {
-      padding: 0;
+      padding: 20px 40px;
       position: relative;
       margin: 0;
       bottom: 0;

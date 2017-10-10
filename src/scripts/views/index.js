@@ -4,6 +4,7 @@ var views = [
     require("./couple"),
     require("./weddingparty"),
     require("./schedule"),
+    require("./basics"),
     require("./rsvp"),
     require("./registry"),
     //require("./place"),

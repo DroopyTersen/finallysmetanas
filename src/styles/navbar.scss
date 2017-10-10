@@ -45,7 +45,7 @@ nav.nav-bar {
             position:relative;
             border-top: 4px solid #fff;
             &.active {
-                border-color: #333
+                border-color: #526D5E
             }
             // MENU LINK
             > a {
@@ -127,7 +127,7 @@ nav.nav-bar {
                 height:auto;
                 &.active { 
                     border-color:#fff;
-                    border-right: 5px solid #000;
+                    border-right: 5px solid #526D5E;
                     > a {
                         color: #000;
                         i.fa {

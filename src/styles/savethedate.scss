@@ -1,10 +1,14 @@
 .save-the-date {
+    // margin-top: 40px;
+    .ornament {
+        margin-bottom: 20px;
+    }
     .image-container {
         position: relative;
         text-align: center;
         img {
             position: relative;
-            top: -30px;
+            // top: -30px;
         }
     }
     .couple-title {
@@ -24,40 +28,14 @@
     .event {
         position: absolute;
         bottom: -60px;
-        background: rgb(18, 18, 18);
+        background: white;
+        padding: 30px 80px;
+        box-sizing: border-box;
         width: 100%;
         margin-top: 20px;
-        .label {
-            margin-top: 30px;
-            font-size: 3em;
-            text-transform: uppercase;
-            font-size: 2em;
-            letter-spacing: 14px;
-            font-weight: bold;
-            color: #fff;
-            .small {
-                font-size: .5em;
-                position: relative;
-                top: -11px;
-                letter-spacing: 7px;
-            }
-        }
-        .date {
-            color: #d36565;
-            font-size: 12rem;
-            font-weight: bolder;
-            font-family: "Playfair Display", serif;
-            line-height: 6rem;
-            margin-bottom: 80px;
-        }
-        .details {
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-bottom: 30px;
-            a {
-                color: #eee;
-                text-decoration: none;
-            }
+        img { 
+            width: 100%;
+            max-width: 380px;
         }
     }
 }
@@ -74,8 +52,8 @@
             position: absolute;
             height: 100%;
             margin: 0;
-            .image-container {
-                margin-top: 50px;
+            .ornament {
+                margin: 65px auto 10px;
             }
             .couple-title {
                 display: block;
@@ -91,7 +69,7 @@
                 top: 0;
             }
             .event {
-                padding: 0;
+                padding: 20px 40px;
                 position: relative;
                 margin: 0;
                 bottom: 0;
