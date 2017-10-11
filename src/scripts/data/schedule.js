@@ -11,7 +11,7 @@ module.exports = [
     { 
         title: "Cocktail Hour",
         date: "Saturday, November 25",
-        time: "4:45pm",
+        time: "5:00pm",
         location: "Racine Masonic Center",
         details: `After a couple of “I do’s” head into the Henry S. Durand Mansion. 
         Enjoy a cocktail or two while we snap a few photos with our BFFs (the wedding party).`
@@ -19,7 +19,7 @@ module.exports = [
     {
         title: "Reception",
         date: "Saturday, November 25",
-        time: "6:00pm",
+        time: "6:30pm",
         location: "Racine Masonic Center",
         details: `It’s okay, we know this is what you’ve all been waiting for – 
         we have too. We’ll meet you in the Grand Ballroom to get the real party started.`
