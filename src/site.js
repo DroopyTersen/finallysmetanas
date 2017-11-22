@@ -1,3 +1,4 @@
+require("babel-polyfill");
 var createHub = require("./scripts/hub").create;
 require("./scripts/utils/polyfills");
 global.fs = {

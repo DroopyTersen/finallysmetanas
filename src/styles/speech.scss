@@ -1,0 +1,32 @@
+.the-speech {
+    .caption {
+        padding: 0;
+        margin-top: 0;
+    }
+    .slide {
+        display: none;
+    }
+    .slide.active {
+        display: block;
+    }
+
+    .admin-actions {
+        display: none;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding: 10px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        background: #444;
+        button {
+            font-size: 24px;
+            padding: 10px 30px;
+            background: #eee;
+            border: 1px solid #ddd;
+        }
+    }
+}
+.the-speech.admin .admin-actions {
+    display: flex;
+}

@@ -8,11 +8,12 @@ var views = [
     require("./rsvp"),
     require("./registry"),
     //require("./place"),
+    require("./speech"),
     require("./travel"),
 ];
 
 views.getLinks = () => {
-    return views.map(v => utils.pluck(v, ["title", "icon", "path"]))
+    return views.filter(v => !v.hidden).map(v => utils.pluck(v, ["title", "icon", "path"]));
 };
 
 views.findByPath = (path) => {

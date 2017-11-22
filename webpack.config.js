@@ -6,25 +6,20 @@ module.exports = {
     output: {
         path: __dirname + "/dist",
         filename: "[name].js",
+        chunkFilename: "[name].chunk.js",
         sourceMapFilename: "[name].js.map"
     },
     module: {
-        loaders: [
-            addBabelLoader() //Enable writing ES6 javascript
-        ]
+        rules: [{
+            test: /\.js?$/,
+            exclude: /(node_modules)/,
+            use: {
+                loader: "babel-loader",
+                options: {
+                    presets: ["env"]
+                }
+            }
+        }]
     },
     devtool: "source-map"
 };
-
-
-// Transpile all js files to ES5
-function addBabelLoader() {
-    return {
-        test: /\.js?$/,
-        exclude: /(node_modules)/,
-        loader: 'babel',
-        query: {
-            presets: ['es2015'],
-        }
-    };
-}

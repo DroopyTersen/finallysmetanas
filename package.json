@@ -23,16 +23,18 @@
   },
   "homepage": "https://github.com/droopytersen/finallysmetanas#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "droopy-events": "^0.0.0",
+    "droopy-firebase": "^0.3.2",
     "express": "^4.14.0",
     "serve-favicon": "^2.3.2"
   },
   "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.16.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "clean-css": "^3.4.20",
     "concurrently": "^3.4.0",
     "css-loader": "^0.25.0",
@@ -42,6 +44,6 @@
     "nodemon": "^1.11.0",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2"
+    "webpack": "^3.8.1"
   }
 }

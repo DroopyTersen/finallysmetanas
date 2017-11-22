@@ -8,6 +8,9 @@ var state = {
         isOpen: false,
         activePath: activeView.path,
         links: views.getLinks()
+    },
+    thespeech: {
+        currentSlide: 0
     }
 }
 
