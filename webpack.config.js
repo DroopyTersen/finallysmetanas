@@ -4,10 +4,10 @@ var path = require("path");
 module.exports = {
     entry: { "site": "./src/site.js" },
     output: {
-        path: __dirname + "/dist",
-        filename: "[name].js",
+        path: path.join( __dirname, 'dist' ),
+        publicPath: '/dist/',
+        filename: '[name].js',
         chunkFilename: "[name].chunk.js",
-        sourceMapFilename: "[name].js.map"
     },
     module: {
         rules: [{

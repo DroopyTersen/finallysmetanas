@@ -24,7 +24,7 @@ module.exports = function() {
                 setCurrentSlide,
                 onSlideChange,
             })
-        }, "dist/firebase");
+        }, "firebase");
 
     });
 }

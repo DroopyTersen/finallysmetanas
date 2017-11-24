@@ -8,12 +8,16 @@ var views = [
     require("./rsvp"),
     require("./registry"),
     //require("./place"),
-    require("./speech"),
     require("./travel"),
+    require("./speech"),
 ];
 
 views.getLinks = () => {
-    return views.filter(v => !v.hidden).map(v => utils.pluck(v, ["title", "icon", "path"]));
+    var results = views.map(v => utils.pluck(v, ["title", "icon", "path", "hidden"]));
+    if (new Date() < new Date("11/25/2017")) {
+        results = results.filter(r => !r.hidden);
+    }
+    return results;
 };
 
 views.findByPath = (path) => {

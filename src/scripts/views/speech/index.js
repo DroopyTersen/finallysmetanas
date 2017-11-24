@@ -6,7 +6,8 @@ let db = null;
 var view = {
     title: "Speech",
     hidden: true,
-    path: "/speech"
+    path: "/speech",
+    icon: "glass"
 };
 
 view.init = async function() {
